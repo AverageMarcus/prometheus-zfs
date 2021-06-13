@@ -5,12 +5,6 @@
 SCRIPT_DIR=$(dirname $0)
 cd ${SCRIPT_DIR}
 
-go test
-if [ "$?" -ne "0" ] ; then
-    echo "go test failed, aborting"
-    exit 1
-fi
-
 # Build
 declare -a TARGETS=(darwin linux solaris freebsd)
 for target in ${TARGETS[@]} ; do
